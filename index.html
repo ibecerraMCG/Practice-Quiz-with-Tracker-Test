@@ -155,6 +155,46 @@
             flex-wrap: wrap;
         }
 
+        /* --- Live Viewer Tracker --- */
+        .live-tracker {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            height: 34px; 
+            transition: background-color var(--transition-speed), border-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #22c55e; /* Green */
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+
+        /* Flex container for the generated widget */
+        #tracker-container {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        
+        #tracker-container img {
+            border-radius: 3px;
+        }
+
         /* --- Controls --- */
         .pin-btn {
             background: none;
@@ -352,8 +392,13 @@
             <h1>CP-Heme Practice Quizzes</h1>
             <div class="controls-wrapper">
                 
-                <!-- UNTOUCHED LIVE TRACKER SCRIPT -->
-                <script id="_wauc3k">var _wau = _wau || []; _wau.push(["classic", "i6qyirjrd4", "c3k"]);</script><script async src="//waust.at/c.js"></script>
+                <!-- LIVE VIEWER TRACKER -->
+                <div class="live-tracker" title="People currently viewing this page">
+                    <span class="live-dot"></span>
+                    <span>Live:</span>
+                    <!-- The container where the dynamic script will be injected -->
+                    <div id="tracker-container"></div>
+                </div>
 
                 <!-- Pin Button -->
                 <button class="pin-btn pin-active" id="pin-btn" onclick="toggleHeader()" title="Pin/Unpin Header">
@@ -681,6 +726,40 @@
         const pinBtn = document.getElementById('pin-btn');
         const sectionNav = document.getElementById('section-nav');
 
+        // Color mapping for the dynamic tracking widget: BackgroundHex + TextHex
+        const themeColors = {
+            'dark': '334155f1f5f9',        // Slate BG, Light text
+            'light': 'ffffff1f2937',       // White BG, Dark text
+            'midnight': '000000e0e0e0',    // Black BG, Gray text
+            'legacy-dark': '3c424fe8e6e3', // Blue-gray BG, Off-white text
+            'sepia': 'fdf6e3433422',       // Cream BG, Brown text
+            'contrast': '000000ffff00'     // Black BG, Yellow text
+        };
+
+        function renderTracker(themeName) {
+            const container = document.getElementById('tracker-container');
+            container.innerHTML = ''; // Wipe out old tracker instance
+
+            // Fallback to dark theme colors if something goes wrong
+            const colorConfig = themeColors[themeName] || '334155f1f5f9';
+
+            // Reset the global _wau array so we don't accidentally stack multiple widgets
+            window._wau = [];
+            // Push configuration: type, site ID, element ID suffix, dynamic color string, size
+            window._wau.push(["dynamic", "v0mogbrja4", "bmh", colorConfig, "small"]);
+
+            // Create the anchor element expected by the script
+            const anchorScript = document.createElement('script');
+            anchorScript.id = '_waubmh';
+            container.appendChild(anchorScript);
+
+            // Fetch and execute the script. Appending the time bypasses browser caching issues when swapping.
+            const loaderScript = document.createElement('script');
+            loaderScript.async = true;
+            loaderScript.src = '//waust.at/d.js?' + new Date().getTime();
+            container.appendChild(loaderScript);
+        }
+
         function initDirectory() {
             // Dynamically build the header navigation based on .week-title elements
             const weekTitles = document.querySelectorAll('.week-title');
@@ -716,6 +795,9 @@
         function changeTheme(themeName) {
             document.documentElement.setAttribute('data-theme', themeName);
             localStorage.setItem('quizTheme', themeName);
+            
+            // Re-render the live tracker to match the new theme colors
+            renderTracker(themeName);
         }
 
         function toggleHeader(forceState) {
