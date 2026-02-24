@@ -724,14 +724,11 @@
 
         // --- Custom Live Viewer Script using Umami API ---
         async function fetchLiveUsers() {
-            // Your Umami API specifics
-            // Note: This fetch logic is client-side. If the browser or server blocks CORS, it may fail silently.
             const websiteId = '3cb2ed63-b477-4c85-a83f-7352712d49c9';
             const apiKey = 'api_lGvz88HE8YgUBZAlmLUdqu4icYJ5aFxA'; 
             const displayEl = document.getElementById('live-count-display');
 
             try {
-                // Fetch active users from Umami Cloud API
                 const response = await fetch(`https://api.umami.is/v1/websites/${websiteId}/active`, {
                     method: 'GET',
                     headers: {
@@ -740,17 +737,18 @@
                     }
                 });
 
-                if (!response.ok) throw new Error('API Error');
+                if (!response.ok) throw new Error(`API Error: ${response.status}`);
 
-                // Umami active endpoint usually returns an array of objects: [{ x: 5 }] where x is count
                 const data = await response.json();
                 
-                // Parse count (handle array or object format safely)
+                // Robust parsing to catch different Umami API return formats
                 let count = 0;
-                if (Array.isArray(data) && data.length > 0) {
-                    count = data[0].x || 0;
-                } else if (typeof data === 'object' && data.x) {
-                    count = data.x;
+                if (Array.isArray(data)) {
+                    count = data.length > 0 ? (data[0].x || 0) : 0;
+                } else if (data && typeof data === 'object') {
+                    count = data.x !== undefined ? data.x : (data.value || 0);
+                } else if (typeof data === 'number') {
+                    count = data;
                 }
 
                 // Update text
@@ -788,9 +786,11 @@
                 toggleHeader(true);
             }
 
-            // Start Live Tracker
-            fetchLiveUsers(); // Initial fetch
-            setInterval(fetchLiveUsers, 30000); // Update every 30s
+            // Start Live Tracker with a 2-second delay to allow the tracking script to fire first
+            setTimeout(() => {
+                fetchLiveUsers(); 
+                setInterval(fetchLiveUsers, 30000); // Update every 30s
+            }, 2000);
         }
 
         function changeTheme(themeName) {
