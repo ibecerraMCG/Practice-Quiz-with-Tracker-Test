@@ -729,7 +729,6 @@
             const displayEl = document.getElementById('live-count-display');
 
             try {
-                // Keep the cache-busting timestamp so the browser always gets the freshest count
                 const url = `https://api.umami.is/v1/websites/${websiteId}/active?t=${Date.now()}`;
                 
                 const response = await fetch(url, {
@@ -745,16 +744,19 @@
 
                 const data = await response.json();
                 
-                // Parse the exact JSON structure we discovered: {"visitors": 4}
+                // Parse the exact JSON structure: {"visitors": 4}
                 const count = (data && data.visitors !== undefined) ? data.visitors : 0;
 
-                // Display the clean number!
-                displayEl.textContent = `Live: ${count}` viewers;
+                // Adjust grammar for singular vs plural
+                const viewerText = count === 1 ? 'viewer' : 'viewers';
+
+                // Display the new formatted text
+                displayEl.textContent = `Live: ${count} ${viewerText}`;
 
             } catch (err) {
-                // Handle strict privacy blockers cleanly by showing a dash
+                // Handle strict privacy blockers cleanly
                 console.warn("Umami connection blocked or failed:", err);
-                displayEl.textContent = `Live: -`;
+                displayEl.textContent = `Live: - viewers`;
             }
         }
 
