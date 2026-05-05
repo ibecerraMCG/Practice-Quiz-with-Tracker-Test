@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CP-Heme Practice Quizzes Directory</title>
+    <title>GI-GU-ENDO Practice Quiz Directory</title>
     
-    <!-- Umami Analytics Tracker -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="3cb2ed63-b477-4c85-a83f-7352712d49c9"></script>
 
     <style>
@@ -13,96 +12,40 @@
         :root {
             --transition-speed: 0.3s;
             --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }[data-theme="dark"] {
+            --bg-body: #1e293b; --bg-card: #334155; --bg-header: #0f172a;
+            --text-main: #f1f5f9; --text-muted: #94a3b8; --text-accent: #38bdf8;
+            --border-color: #475569; --highlight-bg: #475569;
+            --button-bg: #38bdf8; --button-text: #0f172a; --button-hover: #0ea5e9;
+        }[data-theme="light"] {
+            --bg-body: #f3f4f6; --bg-card: #ffffff; --bg-header: #ffffff;
+            --text-main: #1f2937; --text-muted: #6b7280; --text-accent: #2563eb;
+            --border-color: #e5e7eb; --highlight-bg: #e5e7eb;
+            --button-bg: #2563eb; --button-text: #ffffff; --button-hover: #1d4ed8;
+        }[data-theme="midnight"] {
+            --bg-body: #000000; --bg-card: #000000; --bg-header: #000000;
+            --text-main: #e0e0e0; --text-muted: #888888; --text-accent: #90caf9;
+            --border-color: #333333; --highlight-bg: #1a1a1a;
+            --button-bg: #90caf9; --button-text: #000000; --button-hover: #42a5f5;
         }
 
-        /* 1. Modern Dark (Default) */
-        [data-theme="dark"] {
-            --bg-body: #1e293b;
-            --bg-card: #334155;
-            --bg-header: #0f172a;
-            --text-main: #f1f5f9;
-            --text-muted: #94a3b8;
-            --text-accent: #38bdf8;
-            --border-color: #475569;
-            --highlight-bg: #475569;
-            --button-bg: #38bdf8;
-            --button-text: #0f172a;
-            --button-hover: #0ea5e9;
-        }
-
-        /* 2. Modern Light */
-        [data-theme="light"] {
-            --bg-body: #f3f4f6;
-            --bg-card: #ffffff;
-            --bg-header: #ffffff;
-            --text-main: #1f2937;
-            --text-muted: #6b7280;
-            --text-accent: #2563eb;
-            --border-color: #e5e7eb;
-            --highlight-bg: #f3f4f6;
-            --button-bg: #2563eb;
-            --button-text: #ffffff;
-            --button-hover: #1d4ed8;
-        }
-
-        /* 3. Midnight (Pure Black) */
-        [data-theme="midnight"] {
-            --bg-body: #000000;
-            --bg-card: #000000;
-            --bg-header: #000000;
-            --text-main: #e0e0e0;
-            --text-muted: #888888;
-            --text-accent: #90caf9;
-            --border-color: #333333;
-            --highlight-bg: #1a1a1a;
-            --button-bg: #90caf9;
-            --button-text: #000000;
-            --button-hover: #42a5f5;
-        }
-
-        /* 4. Legacy Dark (Original) */
         [data-theme="legacy-dark"] {
-            --bg-body: #2d343e;
-            --bg-card: #3c424f;
-            --bg-header: #3c424f;
-            --text-main: #e8e6e3;
-            --text-muted: #b0c4de;
-            --text-accent: #8ab4f8;
-            --border-color: #555;
-            --highlight-bg: #454c5a;
-            --button-bg: #8ab4f8;
-            --button-text: #202124;
-            --button-hover: #a3c5f9;
+            --bg-body: #2d343e; --bg-card: #3c424f; --bg-header: #3c424f;
+            --text-main: #e8e6e3; --text-muted: #b0c4de; --text-accent: #8ab4f8;
+            --border-color: #555; --highlight-bg: #454c5a;
+            --button-bg: #8ab4f8; --button-text: #202124; --button-hover: #a3c5f9;
         }
 
-        /* 5. Sepia (Reading Mode) */
         [data-theme="sepia"] {
-            --bg-body: #f4ecd8;
-            --bg-card: #fdf6e3;
-            --bg-header: #e4d5b7;
-            --text-main: #433422;
-            --text-muted: #7c6f5a;
-            --text-accent: #a05a2c;
-            --border-color: #d3c4a5;
-            --highlight-bg: #ebe1c9;
-            --button-bg: #a05a2c;
-            --button-text: #fdf6e3;
-            --button-hover: #864822;
-        }
-
-        /* 6. High Contrast */
-        [data-theme="contrast"] {
-            --bg-body: #000000;
-            --bg-card: #000000;
-            --bg-header: #000000;
-            --text-main: #ffffff;
-            --text-muted: #dddddd;
-            --text-accent: #ffff00;
-            --border-color: #ffffff;
-            --highlight-bg: #333333;
-            --button-bg: #ffff00;
-            --button-text: #000000;
-            --button-hover: #e6e600;
+            --bg-body: #f4ecd8; --bg-card: #fdf6e3; --bg-header: #e4d5b7;
+            --text-main: #433422; --text-muted: #7c6f5a; --text-accent: #a05a2c;
+            --border-color: #d3c4a5; --highlight-bg: #ebe1c9;
+            --button-bg: #a05a2c; --button-text: #fdf6e3; --button-hover: #864822;
+        }[data-theme="contrast"] {
+            --bg-body: #000000; --bg-card: #000000; --bg-header: #000000;
+            --text-main: #ffffff; --text-muted: #dddddd; --text-accent: #ffff00;
+            --border-color: #ffffff; --highlight-bg: #333333;
+            --button-bg: #ffff00; --button-text: #000000; --button-hover: #e6e600;
         }
 
         /* --- Global Reset & Layout --- */
@@ -132,202 +75,135 @@
             transition: all 0.3s ease;
         }
 
-        header.unpinned {
-            position: relative;
-            box-shadow: none;
-        }
+        header.unpinned { position: relative; box-shadow: none; }
 
         .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            flex-wrap: wrap;
-            gap: 15px;
+            display: flex; justify-content: space-between; align-items: center;
+            width: 100%; flex-wrap: wrap; gap: 15px;
         }
 
-        header h1 {
-            font-size: 1.5rem;
-            margin: 0;
-            color: var(--text-accent);
-        }
+        header h1 { font-size: 1.5rem; margin: 0; color: var(--text-accent); font-weight: 700; }
 
-        .controls-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+        .controls-wrapper { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 
-        /* --- Live Viewer Tracker Widget --- */
+        /* --- Search Bar --- */
+        .search-box {
+            padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border-color);
+            background-color: var(--bg-card); color: var(--text-main); font-size: 0.9rem;
+            height: 34px; width: 200px; outline: none; transition: border-color 0.2s;
+        }
+        .search-box:focus { border-color: var(--text-accent); }
+
+        /* --- Custom Theme Builder --- */
+        .custom-builder {
+            display: none; flex-wrap: wrap; gap: 15px;
+            background-color: var(--bg-card); padding: 10px 15px;
+            border-radius: 8px; border: 1px solid var(--border-color);
+            margin-top: 5px; font-size: 0.85rem; animation: fadeIn 0.3s;
+        }
+        .custom-builder.active { display: flex; }
+        .color-picker-group { display: flex; align-items: center; gap: 8px; }
+        .color-picker-group input[type="color"] {
+            border: none; width: 25px; height: 25px; border-radius: 4px;
+            cursor: pointer; padding: 0; background: none;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* --- Live Viewer Tracker & Update Widgets --- */
         .live-tracker {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 0 12px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            color: var(--text-main);
-            height: 34px;
-            font-family: monospace;
-            font-weight: bold;
-            cursor: default;
+            display: flex; align-items: center; gap: 8px;
+            background-color: var(--bg-card); border: 1px solid var(--border-color);
+            padding: 0 12px; border-radius: 6px; font-size: 0.9rem;
+            color: var(--text-main); height: 34px; font-family: monospace;
+            font-weight: bold; cursor: default; white-space: nowrap;
         }
-
         .live-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #22c55e; /* Green */
-            border-radius: 50%;
-            animation: pulse 2s infinite;
+            width: 8px; height: 8px; background-color: #22c55e;
+            border-radius: 50%; animation: pulse 2s infinite;
         }
-
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+        
+        .update-pulse-btn {
+            background-color: #22c55e; color: #ffffff; border: none;
+            padding: 0 15px; border-radius: 6px; font-size: 0.9rem; font-weight: bold;
+            cursor: pointer; height: 34px; display: flex; align-items: center;
+            animation: pulse-green 2s infinite; white-space: nowrap;
+            transition: opacity 0.2s;
+        }
+        .update-pulse-btn:hover { opacity: 0.9; }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
             70% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
             100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
         }
 
         /* --- Controls --- */
         .pin-btn {
-            background: none;
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            cursor: pointer;
-            padding: 0 10px;
-            border-radius: 6px;
-            font-size: 1rem;
-            transition: background-color 0.2s;
-            height: 34px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: none; border: 1px solid var(--border-color); color: var(--text-main);
+            cursor: pointer; padding: 0 10px; border-radius: 6px; font-size: 1rem;
+            transition: background-color 0.2s; height: 34px; display: flex;
+            align-items: center; justify-content: center;
         }
-
-        .pin-btn:hover {
-            background-color: var(--highlight-bg);
-        }
-
-        .pin-btn.pin-active {
-            color: var(--text-accent);
-            border-color: var(--text-accent);
-            background-color: rgba(0, 0, 0, 0.1);
-        }
-
-        .theme-control {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
+        .pin-btn:hover { background-color: var(--highlight-bg); }
+        .pin-btn.pin-active { background-color: rgba(0, 0, 0, 0.1); }
 
         select#theme-select {
-            padding: 0 12px;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-            background-color: var(--bg-card);
-            color: var(--text-main);
-            cursor: pointer;
-            font-family: inherit;
-            height: 34px;
+            padding: 0 12px; border-radius: 6px; border: 1px solid var(--border-color);
+            background-color: var(--bg-card); color: var(--text-main);
+            cursor: pointer; font-family: inherit; height: 34px;
         }
 
         /* --- Section Navigation --- */
-        .section-nav {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
+        .section-nav { display: flex; gap: 10px; flex-wrap: wrap; }
         .section-nav button {
-            background-color: var(--highlight-bg);
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
-            padding: 6px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.2s;
+            background-color: var(--highlight-bg); color: var(--text-main);
+            border: 1px solid var(--border-color); padding: 6px 12px;
+            border-radius: 6px; cursor: pointer; font-size: 0.85rem;
+            font-weight: 500; transition: all 0.2s;
         }
+        .section-nav button:hover { border-color: var(--text-accent); color: var(--text-accent); }
 
-        .section-nav button:hover {
-            border-color: var(--text-accent);
-            color: var(--text-accent);
+        /* --- Main Content & Collapsible Logic --- */
+        .container { max-width: 950px; margin: 2rem auto; padding: 0 1rem 4rem 1rem; }
+        .week-section { margin-bottom: 3rem; scroll-margin-top: 150px; }
+        
+        .week-title {
+            color: var(--text-accent); border-bottom: 2px solid var(--text-accent);
+            padding-bottom: 0.5rem; margin-bottom: 1.5rem; font-size: 1.5rem;
+            display: flex; justify-content: space-between; align-items: center;
+            cursor: pointer; user-select: none; transition: opacity 0.2s;
         }
-
-        /* --- Main Content --- */
-        .container {
-            max-width: 950px;
-            margin: 2rem auto;
-            padding: 0 1rem 4rem 1rem;
-        }
+        .week-title:hover { opacity: 0.8; }
+        .toggle-icon { font-size: 1rem; transition: transform 0.3s; }
+        .collapsed .toggle-icon { transform: rotate(-90deg); }
+        .week-content { transition: max-height 0.3s ease-out; overflow: hidden; }
+        .collapsed .week-content { display: none; }
 
         /* --- Directory Cards --- */
-        .week-section {
-            margin-bottom: 3rem;
-            scroll-margin-top: 150px; /* Offset for sticky header */
-        }
-
-        .week-title {
-            color: var(--text-accent);
-            border-bottom: 2px solid var(--text-accent);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-
         .day-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1.5rem;
-            box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
-            transition: transform 0.2s ease;
+            background-color: var(--bg-card); border: 1px solid var(--border-color);
+            border-left: 4px solid var(--text-accent); border-radius: 10px;
+            padding: 1.5rem; margin-bottom: 1rem; display: flex;
+            justify-content: space-between; align-items: center; gap: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.2s ease;
         }
+        .day-card:hover { transform: translateY(-2px); }
 
-        .day-card:hover {
-            transform: translateY(-2px);
-        }
-
-        .day-info {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-            flex: 1;
-        }
-
+        .day-info { display: flex; align-items: flex-start; gap: 1.5rem; flex: 1; }
         .day-badge {
-            background-color: var(--highlight-bg);
-            color: var(--text-main);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-weight: bold;
-            min-width: 130px;
-            text-align: center;
-            border: 1px solid var(--border-color);
+            background-color: var(--highlight-bg); color: var(--text-main);
+            padding: 0.5rem 1rem; border-radius: 6px; font-weight: bold;
+            min-width: 130px; text-align: center; border: 1px solid var(--border-color);
             flex-shrink: 0;
         }
+        .topic-list { margin: 0; padding-left: 1.2rem; color: var(--text-main); font-weight: 500; }
+        .topic-list li { margin-bottom: 0.4rem; }
 
-        .topic-list {
-            margin: 0;
-            padding-left: 1.2rem;
-            color: var(--text-main);
-            font-weight: 500;
-        }
-
-        .topic-list li {
-            margin-bottom: 0.4rem;
-        }
-
+        /* Sub-notes for things like "Not included" */
         .sub-note {
             font-size: 0.85em;
             color: var(--text-muted);
@@ -339,27 +215,14 @@
         }
 
         .btn-link {
-            background-color: var(--button-bg);
-            color: var(--button-text);
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            font-weight: 600;
-            white-space: nowrap;
-            transition: opacity 0.2s;
-            text-align: center;
+            background-color: var(--button-bg); color: var(--button-text);
+            text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 6px;
+            font-weight: 600; white-space: nowrap; transition: opacity 0.2s; text-align: center;
         }
-
-        .btn-link:hover {
-            opacity: 0.9;
-        }
-
+        .btn-link:hover { opacity: 0.9; }
         .btn-disabled {
-            background-color: var(--highlight-bg);
-            color: var(--text-muted);
-            cursor: not-allowed;
-            pointer-events: none;
-            border: 1px dashed var(--border-color);
+            background-color: var(--highlight-bg); color: var(--text-muted);
+            cursor: not-allowed; pointer-events: none; border: 1px dashed var(--border-color);
         }
 
         /* --- Mobile Tweaks --- */
@@ -367,19 +230,11 @@
             .header-top { flex-direction: column; align-items: flex-start; }
             .controls-wrapper { width: 100%; justify-content: flex-start; }
             .section-nav { justify-content: flex-start; }
-            
-            .day-card {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .day-info {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .day-badge {
-                width: auto;
-                display: inline-block;
-            }
+            .search-box { width: 100%; }
+            .day-card { flex-direction: column; align-items: stretch; }
+            .day-info { flex-direction: column; gap: 1rem; }
+            .day-badge { width: auto; display: inline-block; }
+            .btn-link { width: 100%; }
         }
     </style>
 </head>
@@ -387,22 +242,30 @@
 
     <header id="main-header">
         <div class="header-top">
-            <h1>CP-Heme Practice Quizzes</h1>
+            <h1>GI-GU-ENDO Practice Quiz Directory</h1>
             <div class="controls-wrapper">
                 
-                <!-- LIVE VIEWER TRACKER (Umami API) -->
-                <div class="live-tracker" title="Active Users">
+                <input type="text" id="topic-search" class="search-box" placeholder="Search topics..." onkeyup="filterCards()">
+                
+                <!-- Updated: Visitors Tracker -->
+                <div class="live-tracker" title="Visitors Today (Eastern Time)">
                     <span class="live-dot"></span>
-                    <span id="live-count-display">Live: ...</span>
+                    <span id="visitor-count-display">Visitors Today: ...</span>
                 </div>
 
-                <!-- Pin Button -->
-                <button class="pin-btn pin-active" id="pin-btn" onclick="toggleHeader()" title="Pin/Unpin Header">
-                    📍
+                <!-- NEW: Last Updated Status Display -->
+                <div class="live-tracker" id="last-updated-container" title="When the site was last pushed to GitHub Pages">
+                    <span id="last-updated-display">Updated: Checking...</span>
+                </div>
+
+                <!-- NEW: Update Alert Button (Hidden by default) -->
+                <button id="update-refresh-btn" class="update-pulse-btn" onclick="window.location.reload(true)" style="display: none;" title="A new quiz was posted! Click to refresh the page.">
+                    ✨ New Update! (Refresh)
                 </button>
                 
+                <button class="pin-btn pin-active" id="pin-btn" onclick="toggleHeader()" title="Pin/Unpin Header">📌</button>
+                
                 <div class="theme-control">
-                    <label for="theme-select">Theme:</label>
                     <select id="theme-select" onchange="changeTheme(this.value)">
                         <option value="dark">Modern Dark</option>
                         <option value="midnight">Midnight</option>
@@ -410,307 +273,256 @@
                         <option value="legacy-dark">Legacy Dark</option>
                         <option value="sepia">Sepia</option>
                         <option value="contrast">High Contrast</option>
+                        <option value="custom">⚙️ Custom...</option>
                     </select>
                 </div>
             </div>
+            
+            <div class="custom-builder" id="custom-builder">
+                <div class="color-picker-group">
+                    <label>Background:</label>
+                    <input type="color" id="color-bg" value="#1a1a2e" oninput="updateCustomTheme()">
+                </div>
+                <div class="color-picker-group">
+                    <label>Cards:</label>
+                    <input type="color" id="color-card" value="#16213e" oninput="updateCustomTheme()">
+                </div>
+                <div class="color-picker-group">
+                    <label>Text:</label>
+                    <input type="color" id="color-text" value="#e94560" oninput="updateCustomTheme()">
+                </div>
+                <div class="color-picker-group">
+                    <label>Accent:</label>
+                    <input type="color" id="color-accent" value="#0f3460" oninput="updateCustomTheme()">
+                </div>
+            </div>
         </div>
-        <!-- Dynamic Navigation Bar injected via JS -->
+        
         <div class="section-nav" id="section-nav"></div>
     </header>
 
     <div class="container" id="directory-root">
         
-        <!-- WEEK 24 -->
-        <div class="week-section" id="week-24">
-            <h2 class="week-title">Week 24</h2>
+        <!-- WEEK 36 -->
+        <div class="week-section" id="week-36">
+            <h2 class="week-title" onclick="toggleWeek('week-36')">Week 36 <span class="toggle-icon">▼</span></h2>
             
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Mon</div>
-                    <ul class="topic-list">
-                        <li>Blood, Body Fluids, and Cardiovascular Physiology</li>
-                        <li>Histology of Peripheral Blood</li>
-                        <li>Heme Synthesis and Porphyria</li>
-                        <li>Anemia</li>
-                    </ul>
+            <div class="week-content">
+                <div class="day-card">
+                    <div class="day-info">
+                        <div class="day-badge">Part 1</div>
+                        <ul class="topic-list">
+                            <li>Upper GI Tract Anatomy: Oral Cavity, Palate, and Pharynx</li>
+                            <li>Anterior Abdominal Wall and Inguinal Region</li>
+                            <li>Upper GI Histology</li>
+                        </ul>
+                    </div>
+                    <a href="https://ibecerramcg.github.io/GIGUENDO-Week-36-Quiz-1/" class="btn-link">Take Quiz</a>
                 </div>
-                <a href="https://ibecerramcg.github.io/CP-Heme-Week-24-Monday-Practice-Quiz/" target="_blank" class="btn-link">Take Quiz</a>
-            </div>
 
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Tues</div>
-                    <ul class="topic-list">
-                        <li>Hemolytic Anemias</li>
-                        <li>Hemostasis, Thrombosis, and Bleeding Disorders I</li>
-                        <li>Hemostasis, Thrombosis, and Bleeding Disorders II</li>
-                        <li>Anticoagulant Therapy</li>
-                    </ul>
+                <div class="day-card">
+                    <div class="day-info">
+                        <div class="day-badge">Part 2</div>
+                        <ul class="topic-list">
+                            <li>Oral Pathology and Upper GI Disorders</li>
+                            <li>GI General Principles and Exocrine Secretions</li>
+                            <li>Motility and Related Reflexes</li>
+                            <li>Celiac Trunk and Associated Abdominal Viscera</li>
+                        </ul>
+                    </div>
+                    <a href="https://ibecerramcg.github.io/GIGUENDO-Week-36-Quiz-2/" class="btn-link">Take Quiz</a>
                 </div>
-                <a href="https://ibecerramcg.github.io/CP-Heme-Week-24-Tuesday-Practice-Quiz/" target="_blank" class="btn-link">Take Quiz</a>
-            </div>
 
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Wed & Thurs</div>
-                    <ul class="topic-list">
-                        <li>Hemoglobinopathies</li>
-                        <li>Malaria</li>
-                    </ul>
+                <div class="day-card">
+                    <div class="day-info">
+                        <div class="day-badge">Part 3</div>
+                        <ul class="topic-list">
+                            <li>Digestion and Absorption of Macronutrients</li>
+                            <li>Odontogenic Infections</li>
+                            <li>Upper Gastrointestinal Pharmacology</li>
+                            <li>Disorders of Stomach and Esophagus I & II</li>
+                        </ul>
+                    </div>
+                    <a href="https://ibecerramcg.github.io/GIGUENDO-Week-36-Quiz-3/" class="btn-link">Take Quiz</a>
                 </div>
-                <a href="https://ibecerramcg.github.io/CP-Heme-Week-24-Wednesday-Thursday-Practice-Quiz/" target="_blank" class="btn-link">Take Quiz</a>
             </div>
         </div>
 
-        <!-- WEEK 25 -->
-        <div class="week-section" id="week-25">
-            <h2 class="week-title">Week 25</h2>
+        <!-- WEEK 38 -->
+        <div class="week-section" id="week-38">
+            <h2 class="week-title" onclick="toggleWeek('week-38')">Week 38 <span class="toggle-icon">▼</span></h2>
             
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Mon & Tues</div>
-                    <ul class="topic-list">
-                        <li>Hematopoiesis and Lymphoid System</li>
-                        <li>Lymphoid Malignancies (I + II)</li>
-                        <li>Myeloid Neoplasms (I + II)</li>
-                    </ul>
+            <div class="week-content">
+                <div class="day-card">
+                    <div class="day-info">
+                        <div class="day-badge">Part 1</div>
+                        <ul class="topic-list">
+                            <li>Superior and Inferior Mesenteric Arteries and Associated Abdominal Viscera</li>
+                            <li>Development of the Pharyngeal Arches</li>
+                            <li>Development of the Gastrointestinal System</li>
+                        </ul>
+                    </div>
+                    <a href="https://ibecerramcg.github.io/GIGUENDO-Week-38-Quiz-1/" class="btn-link">Take Quiz</a>
                 </div>
-                <a href="https://ibecerramcg.github.io/CP-Heme-Week-25-Monday-Tuesday-Practice-Quiz/" target="_blank" class="btn-link">Take Quiz</a>
-            </div>
 
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Wed</div>
-                    <ul class="topic-list">
-                        <li>Infection in the Neutropenic Patient</li>
-                        <li>Transfusion Medicine & Stem Cell Therapy</li>
-                        <li>Cancer Chemotherapy</li>
-                    </ul>
+                <div class="day-card">
+                    <div class="day-info">
+                        <div class="day-badge">Part 2</div>
+                        <ul class="topic-list">
+                            <li>Lower GI Histology</li>
+                            <li>Lower GI Pathology</li>
+                            <li>Protozoal Infections and Helminths</li>
+                            <li>Water Soluble Vitamins</li>
+                        </ul>
+                    </div>
+                    <a href="https://ibecerramcg.github.io/GIGUENDO-Week-38-Quiz-2/" class="btn-link">Take Quiz</a>
                 </div>
-                <a href="https://ibecerramcg.github.io/CP-Heme-Week-25-Wednesday-Practice-Quiz/" target="_blank" class="btn-link">Take Quiz</a>
+
+                <div class="day-card">
+                    <div class="day-info">
+                        <div class="day-badge">Part 3</div>
+                        <ul class="topic-list">
+                            <li>Drugs of the Lower GI</li>
+                            <li>Disorders of the Small & Large Intestines I & II</li>
+                            <li>Bacterial Infections - Enteric and Peritoneal</li>
+                            <li>Viral Infections and GALT</li>
+                        </ul>
+                    </div>
+                    <a href="https://ibecerramcg.github.io/GIGUENDO-Week-38-Quiz-3/" class="btn-link">Take Quiz</a>
+                </div>
             </div>
         </div>
 
-        <!-- WEEK 26 -->
-        <div class="week-section" id="week-26">
-            <h2 class="week-title">Week 26</h2>
+        <!-- WEEK 39 -->
+        <div class="week-section" id="week-39">
+            <h2 class="week-title" onclick="toggleWeek('week-39')">Week 39 <span class="toggle-icon">▼</span></h2>
             
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Tues & Wed</div>
-                    <ul class="topic-list">
-                        <li>Thoracic Wall, Heart, and Mediastinum</li>
-                        <li>Cardiovascular Histology</li>
-                        <li>Cardiac Cycle & Physiology of the ECG</li>
-                        <li>Clinical Assessment of the Cardiovascular System & Clinical ECG Interpretation</li>
-                    </ul>
+            <div class="week-content">
+                <div class="day-card">
+                    <div class="day-info">
+                        <div class="day-badge">Part 1</div>
+                        <ul class="topic-list">
+                            <li>Histology of the Liver, Pancreas, and Gallbladder</li>
+                            <li>Physiology of Liver and Biliary Tree</li>
+                            <li>Physiology of Pancreas</li>
+                        </ul>
+                    </div>
+                    <a href="https://ibecerramcg.github.io/GIGUENDO-Week-39-Quiz-1/" class="btn-link">Take Quiz</a>
                 </div>
-                <a href="https://ibecerramcg.github.io/CP-Heme-Week-26-Tuesday-Wednesday-Practice-Quiz/" target="_blank" class="btn-link">Take Quiz</a>
-            </div>
 
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Wed & Thurs</div>
-                    <ul class="topic-list">
-                        <li>Circulatory and Capillary Hemodynamics</li>
-                        <li>Regulation of Blood Flow & Venous Return</li>
-                        <li>Heart Sounds and Auscultation</li>
-                        <li>Determinants of Stroke Volume and Cardiac Output</li>
-                    </ul>
+                <div class="day-card">
+                    <div class="day-info">
+                        <div class="day-badge">Part 2</div>
+                        <ul class="topic-list">
+                            <li>Pathology of the Liver</li>
+                            <li>Biliary and Pancreatic Pathologies</li>
+                            <li>Diagnosis and Management of Pancreatic Disorders</li>
+                            <li>Pharmacogenomics</li>
+                        </ul>
+                    </div>
+                    <a href="https://ibecerramcg.github.io/GIGUENDO-Week-39-Quiz-2/" class="btn-link">Take Quiz</a>
                 </div>
-                <a href="https://ibecerramcg.github.io/CP-Heme-Week-26-Wednesday-Thursday-Practice-Quiz/" target="_blank" class="btn-link">Take Quiz</a>
+
+                <div class="day-card">
+                    <div class="day-info">
+                        <div class="day-badge">Part 3</div>
+                        <ul class="topic-list">
+                            <li>Cytochrome P450 Liver Metabolism</li>
+                            <li>Chronic Liver Disease, Cirrhosis, and Portal Hypertension</li>
+                            <li>Fat-Soluble Vitamins</li>
+                        </ul>
+                    </div>
+                    <a href="https://ibecerramcg.github.io/GIGUENDO-Week-39-Quiz-3/" class="btn-link">Take Quiz</a>
+                </div>
             </div>
         </div>
 
-        <!-- WEEK 27 -->
-        <div class="week-section" id="week-27">
-            <h2 class="week-title">Week 27</h2>
+        <!-- WEEK 40 -->
+        <div class="week-section" id="week-40">
+            <h2 class="week-title" onclick="toggleWeek('week-40')">Week 40 <span class="toggle-icon">▼</span></h2>
             
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Mon & Tues</div>
-                    <ul class="topic-list">
-                        <li>Vascular Pathology</li>
-                        <li>Peripheral Vascular Disease</li>
-                        <li>Cardiovascular System Development (I + II)</li>
-                        <li>Cardiomyopathies</li>
-                    </ul>
+            <div class="week-content">
+                <div class="day-card">
+                    <div class="day-info">
+                        <div class="day-badge">Part 1</div>
+                        <ul class="topic-list">
+                            <li>Posterior Abdominal Wall, Kidneys, and Bladder</li>
+                            <li>Urinary Histology</li>
+                            <li>Renal Clearance</li>
+                        </ul>
+                    </div>
+                    <a href="https://ibecerramcg.github.io/GIGUENDO-Week-40-Quiz-1/" class="btn-link">Take Quiz</a>
                 </div>
-                <a href="https://ibecerramcg.github.io/CP-Heme-Week-27-Monday-Tuesday-Practice-Quiz/" target="_blank" class="btn-link">Take Quiz</a>
-            </div>
 
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Wed & Thurs</div>
-                    <ul class="topic-list">
-                        <li>Management of Cardiac Arrhythmias</li>
-                        <li>Valvular Heart Disease</li>
-                        <li class="sub-note">• Citations sources corrected, pg numbers might be off by -1</li>
-                        <li>Cardiac Antiarrhythmics</li>
-                        <li>Congenital Heart Disorders</li>
-                    </ul>
+                <div class="day-card">
+                    <div class="day-info">
+                        <div class="day-badge">Part 2</div>
+                        <ul class="topic-list">
+                            <li>Development of the Urinary System</li>
+                            <li>Renal Pathology</li>
+                            <li>Renal Blood Flow and GFR</li>
+                            <li>Tubular Reabsorption and Secretion</li>
+                        </ul>
+                    </div>
+                    <a href="https://ibecerramcg.github.io/GIGUENDO-Week-40-Quiz-2/" class="btn-link">Take Quiz</a>
                 </div>
-                <a href="https://ibecerramcg.github.io/CP-Heme-Week-27-Wednesday-Thursday-Practice-Quiz/" target="_blank" class="btn-link">Take Quiz</a>
+
+                <div class="day-card">
+                    <div class="day-info">
+                        <div class="day-badge">Part 3</div>
+                        <ul class="topic-list">
+                            <li>Renal Water & Renal Sodium</li>
+                            <li>EBM Disease Screening Session (for module exam only)</li>
+                            <li>Renal Handling of K, Ca, and PO4</li>
+                        </ul>
+                    </div>
+                    <a href="https://ibecerramcg.github.io/GIGUENDO-Week-40-Quiz-3/" class="btn-link">Take Quiz</a>
+                </div>
             </div>
         </div>
 
-        <!-- WEEK 28 -->
-        <div class="week-section" id="week-28">
-            <h2 class="week-title">Week 28</h2>
+        <!-- WEEK 41 -->
+        <div class="week-section" id="week-41">
+            <h2 class="week-title" onclick="toggleWeek('week-41')">Week 41 <span class="toggle-icon">▼</span></h2>
             
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Mon & Tues</div>
-                    <ul class="topic-list">
-                        <li>Physiology of Shock and Rapid Blood Pressure Control</li>
-                        <li>Chronic Blood Pressure Control and Hypertension</li>
-                        <li>ANS Overview & Adrenergics</li>
-                        <li>Cardiac Pathology</li>
-                    </ul>
+            <div class="week-content">
+                <div class="day-card">
+                    <div class="day-info">
+                        <div class="day-badge">Part 1</div>
+                        <ul class="topic-list">
+                            <li>Regulation of Acid-Base</li>
+                            <li>Control Micturition & Diuretics</li>
+                        </ul>
+                    </div>
+                    <a href="https://ibecerramcg.github.io/GIGUENDO-Week-41-Quiz-1/" class="btn-link">Take Quiz</a>
                 </div>
-                <a href="https://ibecerramcg.github.io/CP-Heme-Week-28-Monday-Tuesday-Practice-Quiz/" target="_blank" class="btn-link">Take Quiz</a>
-            </div>
 
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Wed & Thurs</div>
-                    <ul class="topic-list">
-                        <li>Clinical Diagnosis of Hypertension/Primary Hypoaldosteronism</li>
-                        <li>DVT & Pulmonary Embolism</li>
-                        <li>Antihypertensives</li>
-                        <li>Lipid Lowering Drugs</li>
-                        <li>Antihypertensives: Autonomic</li>
-                    </ul>
+                <div class="day-card">
+                    <div class="day-info">
+                        <div class="day-badge">Part 2</div>
+                        <ul class="topic-list">
+                            <li>Nephritic Syndrome</li>
+                            <li>Nephrotic Syndrome</li>
+                            <li>Disorders of Potassium Homeostasis</li>
+                            <li>Acid-Base Disorders and Clinical Correlations</li>
+                        </ul>
+                    </div>
+                    <a href="https://ibecerramcg.github.io/GIGUENDO-Week-41-Quiz-2/" class="btn-link">Take Quiz</a>
                 </div>
-                <a href="https://ibecerramcg.github.io/CP-Heme-Week-28-Wednesday-Thursday-Practice-Quiz/" target="_blank" class="btn-link">Take Quiz</a>
-            </div>
-        </div>
 
-        <!-- WEEK 29 -->
-        <div class="week-section" id="week-29">
-            <h2 class="week-title">Week 29</h2>
-            
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Mon & Tues</div>
-                    <ul class="topic-list">
-                        <li>Superficial & Deep Neck</li>
-                        <li>Coronary Artery Disease</li>
-                        <li>Heart Failure: Whole Body Integration</li>
-                    </ul>
+                <div class="day-card">
+                    <div class="day-info">
+                        <div class="day-badge">Part 3</div>
+                        <ul class="topic-list">
+                            <li>Fluid and Electrolyte Clinical Correlations</li>
+                            <li>Sepsis</li>
+                            <li>Bladder Dysfunction</li>
+                            <li>Non-Glomerular Diseases of the Kidney</li>
+                            <li class="sub-note">(GIGU Imaging Session not included, image-based)</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn-link btn-disabled">Link Pending</a>
                 </div>
-                <a href="https://ibecerramcg.github.io/CP-Heme-Week-29-Monday-Tuesday-Practice-Quiz/" target="_blank" class="btn-link">Take Quiz</a>
-            </div>
-
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Tues & Wed</div>
-                    <ul class="topic-list">
-                        <li>Diagnostic Criteria for Heart Failure</li>
-                        <li class="sub-note">• Updated citations to 2026 version</li>
-                        <li>Congestive Heart Failure Treatment (I, II, III)</li>
-                        <li>Antianginals</li>
-                    </ul>
-                </div>
-                <a href="https://ibecerramcg.github.io/CP-Heme-Week-29-Tuesday-Wednesday-Practice-Quiz/" target="_blank" class="btn-link">Take Quiz</a>
-            </div>
-
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Wed</div>
-                    <ul class="topic-list">
-                        <li>Acute Coronary Syndrome/Management of Non-Coronary Chest Pain</li>
-                        <li>Cardiac Intervention & Surgery</li>
-                        <li>Endo/Pericarditis</li>
-                    </ul>
-                </div>
-                <a href="https://ibecerramcg.github.io/Week-29-Wednesday-Practice-Quiz/" target="_blank" class="btn-link">Take Quiz</a>
-            </div>
-        </div>
-
-        <!-- WEEK 30 -->
-        <div class="week-section" id="week-30">
-            <h2 class="week-title">Week 30</h2>
-            
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Mon</div>
-                    <ul class="topic-list">
-                        <li>Upper Respiratory Tract Anatomy</li>
-                        <li>Pleural Cavity and Lungs</li>
-                        <li>Respiratory Histology</li>
-                    </ul>
-                </div>
-                <a href="https://ibecerramcg.github.io/CP-Heme-Week-30-Monday-Practice-Quiz/" target="_blank" class="btn-link">Take Quiz</a>
-            </div>
-
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Tues</div>
-                    <ul class="topic-list">
-                        <li>Mechanics and Ventilation</li>
-                        <li>Gas Exchange & Diffusion</li>
-                        <li>Gas Transport</li>
-                        <li>Pediatric Viral Infections</li>
-                    </ul>
-                </div>
-                <a href="https://ibecerramcg.github.io/CP-Heme-Week-30-Tuesday-Practice-Quiz/" target="_blank" class="btn-link">Take Quiz</a>
-            </div>
-
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Wed & Thurs</div>
-                    <ul class="topic-list">
-                        <li>PFTs, ABGs, and Diagnosing Gas Exchange</li>
-                        <li>Clinical Approach to COPD</li>
-                        <li>Pathology of Obstructive Lung Disease</li>
-                        <li>COPD Treatment</li>
-                        <li>Asthma Diagnosis and Treatment</li>
-                    </ul>
-                </div>
-                <a href="https://ibecerramcg.github.io/CP-Heme-Week-30-Wednesday-Thursday-Practice-Quiz/" target="_blank" class="btn-link">Take Quiz</a>
-            </div>
-        </div>
-
-        <!-- WEEK 31 -->
-        <div class="week-section" id="week-31">
-            <h2 class="week-title">Week 31</h2>
-            
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Mon & Tues</div>
-                    <ul class="topic-list">
-                        <li>Upper Respiratory Infections</li>
-                        <li>Pulmonary Circulation: Ventilation and Perfusion</li>
-                        <li>Development of the Body Cavities and Respiratory System</li>
-                    </ul>
-                </div>
-                <a href="https://ibecerramcg.github.io/CP-Heme-Week-31-Quiz-1/" target="_blank" class="btn-link">Take Quiz</a>
-            </div>
-
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Tues</div>
-                    <ul class="topic-list">
-                        <li>Pulmonary Hypertension</li>
-                        <li>ARDS & Neonatal Respiratory Distress Syndrome</li>
-                        <li>Pathology of Vascular Infectious Pulmonary Disorders</li>
-                    </ul>
-                </div>
-                <a href="https://ibecerramcg.github.io/CP-Heme-Week-31-Quiz-2/" target="_blank" class="btn-link">Take Quiz</a>
-            </div>
-
-            <div class="day-card">
-                <div class="day-info">
-                    <div class="day-badge">Wed & Thurs</div>
-                    <ul class="topic-list">
-                        <li>Pathology of Interstitial Lung Disease</li>
-                        <li>Clinical Approach to Interstitial Lung Disease</li>
-                        <li>Clinical Presentation of Pulmonary Hypertension Cases</li>
-                        <li class="sub-note">• Chest Imaging may not be included, image-based</li>
-                    </ul>
-                </div>
-                <a href="#" class="btn-link btn-disabled">Link Pending</a>
             </div>
         </div>
 
@@ -721,83 +533,176 @@
         const themeSelect = document.getElementById('theme-select');
         const pinBtn = document.getElementById('pin-btn');
         const sectionNav = document.getElementById('section-nav');
+        const customBuilder = document.getElementById('custom-builder');
+        const rootElements = document.documentElement;
 
-      // --- Custom Live Viewer Script using Umami API ---
-        async function fetchLiveUsers() {
-            const websiteId = '3cb2ed63-b477-4c85-a83f-7352712d49c9';
-            const apiKey = 'api_lGvz88HE8YgUBZAlmLUdqu4icYJ5aFxA'; 
-            const displayEl = document.getElementById('live-count-display');
-
+        // --- Live Tracker via Cloudflare Worker ---
+        async function fetchDailyVisitors() { 
+            const proxyUrl = 'https://umami-proxy-giguendo.ianbecerra4.workers.dev/'; 
+            const displayEl = document.getElementById('visitor-count-display');
             try {
-                const url = `https://api.umami.is/v1/websites/${websiteId}/active?t=${Date.now()}`;
-                
-                const response = await fetch(url, {
-                    method: 'GET',
-                    cache: 'no-store',
-                    headers: {
-                        'x-umami-api-key': apiKey,
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (!response.ok) throw new Error(`API Error: ${response.status}`);
-
+                const response = await fetch(proxyUrl);
+                if (!response.ok) throw new Error('Proxy Error');
                 const data = await response.json();
-                
-                // Parse the exact JSON structure: {"visitors": 4}
-                const count = (data && data.visitors !== undefined) ? data.visitors : 0;
-
-                // Adjust grammar for singular vs plural
-                const viewerText = count === 1 ? 'viewer' : 'viewers';
-
-                // Display the new formatted text
-                displayEl.textContent = `Live: ${count} ${viewerText}`;
-
+                displayEl.textContent = `Visitors Today: ${data.visitors}`;
             } catch (err) {
-                // Handle strict privacy blockers cleanly
-                console.warn("Umami connection blocked or failed:", err);
-                displayEl.textContent = `Live: - viewers`;
+                console.warn("View counter failed:", err);
+                displayEl.textContent = `Visitors: -`;
             }
         }
 
+        // --- NEW: Active Polling for Site Updates ---
+        let initialLastModified = null;
+
+        async function checkSiteUpdate() {
+            try {
+                // We add a random timestamp parameter to the URL to completely bypass the browser cache and force it to check GitHub servers
+                const cacheBusterUrl = window.location.href.split('?')[0] + '?cb=' + new Date().getTime();
+                
+                // Fetching via 'HEAD' only grabs the hidden data (headers), saving data usage!
+                const response = await fetch(cacheBusterUrl, { method: 'HEAD', cache: 'no-store' });
+                const lastModifiedHeader = response.headers.get('Last-Modified');
+                
+                if (lastModifiedHeader) {
+                    const lastModifiedDate = new Date(lastModifiedHeader);
+                    
+                    // Format date to look like "May 5, 4:30 PM"
+                    const formattedDate = lastModifiedDate.toLocaleString([], {
+                        month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'
+                    });
+                    
+                    document.getElementById('last-updated-display').textContent = `Updated: ${formattedDate}`;
+
+                    // Compare current version to version grabbed on page load
+                    if (!initialLastModified) {
+                        initialLastModified = lastModifiedDate.getTime();
+                    } else if (lastModifiedDate.getTime() > initialLastModified) {
+                        // GitHub has pushed a new version! Show the refresh button
+                        document.getElementById('update-refresh-btn').style.display = 'inline-flex';
+                        document.getElementById('last-updated-container').style.display = 'none'; // Hide the text to make room for button
+                    }
+                }
+            } catch (err) {
+                console.warn("Could not check for site updates:", err);
+            }
+        }
+
+        // --- Core Init Logic ---
         function initDirectory() {
-            // Build Navigation
+            // Build Quick Navigation
             const weekTitles = document.querySelectorAll('.week-title');
-            
             weekTitles.forEach(title => {
                 const sectionId = title.parentElement.id;
                 const navBtn = document.createElement('button');
-                navBtn.textContent = title.textContent;
-                navBtn.onclick = () => {
-                    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-                };
+                navBtn.textContent = title.textContent.replace('▼', '').trim();
+                navBtn.onclick = () => document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
                 sectionNav.appendChild(navBtn);
             });
 
-            // Theme & Pin Logic
+            // Initialize Theme
             const savedTheme = localStorage.getItem('quizTheme') || 'dark';
-            changeTheme(savedTheme);
             themeSelect.value = savedTheme;
+            changeTheme(savedTheme);
 
+            // Initialize Header Pin State
             const savedPinState = localStorage.getItem('headerPinned');
-            if (savedPinState === 'false') {
-                toggleHeader(false); 
-            } else {
-                toggleHeader(true);
-            }
+            toggleHeader(savedPinState !== 'false');
 
-            // Start Live Tracker with a 2-second delay to allow the tracking script to fire first
+            // Initialize Collapsed Weeks
+            const collapsedWeeks = JSON.parse(localStorage.getItem('collapsedWeeks') || '{}');
+            document.querySelectorAll('.week-section').forEach(section => {
+                if (collapsedWeeks[section.id]) {
+                    section.classList.add('collapsed');
+                }
+            });
+
+            // Delay fetching so page rendering doesn't block
             setTimeout(() => {
-                fetchLiveUsers(); 
-                setInterval(fetchLiveUsers, 30000); // Update every 30s
-            }, 2000);
+                fetchDailyVisitors(); 
+                checkSiteUpdate();
+                
+                // Poll for new visitors AND new github pushes every 60 seconds
+                setInterval(() => {
+                    fetchDailyVisitors();
+                    checkSiteUpdate();
+                }, 60000);
+            }, 1500);
         }
 
+        // --- Collapsible Week Logic ---
+        function toggleWeek(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.classList.toggle('collapsed');
+            
+            // Save state to localStorage
+            const states = JSON.parse(localStorage.getItem('collapsedWeeks') || '{}');
+            states[sectionId] = section.classList.contains('collapsed');
+            localStorage.setItem('collapsedWeeks', JSON.stringify(states));
+        }
+
+        // --- Search / Filter Logic ---
+        function filterCards() {
+            const query = document.getElementById('topic-search').value.toLowerCase();
+            const cards = document.querySelectorAll('.day-card');
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                card.style.display = text.includes(query) ? "flex" : "none";
+            });
+        }
+
+        // --- Theme Engine Logic ---
         function changeTheme(themeName) {
-            document.documentElement.setAttribute('data-theme', themeName);
             localStorage.setItem('quizTheme', themeName);
+            
+            if (themeName === 'custom') {
+                rootElements.removeAttribute('data-theme'); // Clear default variables
+                customBuilder.classList.add('active');
+                loadCustomTheme();
+            } else {
+                rootElements.setAttribute('data-theme', themeName);
+                customBuilder.classList.remove('active');
+                // Remove inline custom styles so default variables work properly
+                rootElements.style = '';
+            }
         }
 
+        // --- Custom Theme Builder Logic ---
+        function updateCustomTheme() {
+            const bg = document.getElementById('color-bg').value;
+            const card = document.getElementById('color-card').value;
+            const text = document.getElementById('color-text').value;
+            const accent = document.getElementById('color-accent').value;
+
+            // Apply directly to root CSS variables
+            rootElements.style.setProperty('--bg-body', bg);
+            rootElements.style.setProperty('--bg-header', bg);
+            rootElements.style.setProperty('--bg-card', card);
+            rootElements.style.setProperty('--highlight-bg', card);
+            rootElements.style.setProperty('--text-main', text);
+            rootElements.style.setProperty('--text-accent', accent);
+            rootElements.style.setProperty('--button-bg', accent);
+            rootElements.style.setProperty('--button-text', bg);
+            rootElements.style.setProperty('--border-color', accent + '40'); // slightly transparent accent
+
+            // Save to local storage
+            const customColors = { bg, card, text, accent };
+            localStorage.setItem('customThemeColors', JSON.stringify(customColors));
+        }
+
+        function loadCustomTheme() {
+            const savedColors = JSON.parse(localStorage.getItem('customThemeColors'));
+            if (savedColors) {
+                document.getElementById('color-bg').value = savedColors.bg;
+                document.getElementById('color-card').value = savedColors.card;
+                document.getElementById('color-text').value = savedColors.text;
+                document.getElementById('color-accent').value = savedColors.accent;
+                updateCustomTheme();
+            } else {
+                updateCustomTheme(); // Set to the default input values
+            }
+        }
+
+        // --- Sticky Header Pin Logic ---
         function toggleHeader(forceState) {
             const isCurrentlyPinned = !mainHeader.classList.contains('unpinned');
             const newState = (typeof forceState === 'boolean') ? forceState : !isCurrentlyPinned;
@@ -813,7 +718,6 @@
             }
         }
 
-        // Initialize on DOM load
         document.addEventListener('DOMContentLoaded', initDirectory);
     </script>
 </body>
