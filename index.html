@@ -34,9 +34,7 @@
             --text-main: #e8e6e3; --text-muted: #b0c4de; --text-accent: #8ab4f8;
             --border-color: #555; --highlight-bg: #454c5a;
             --button-bg: #8ab4f8; --button-text: #202124; --button-hover: #a3c5f9;
-        }
-
-        [data-theme="sepia"] {
+        }[data-theme="sepia"] {
             --bg-body: #f4ecd8; --bg-card: #fdf6e3; --bg-header: #e4d5b7;
             --text-main: #433422; --text-muted: #7c6f5a; --text-accent: #a05a2c;
             --border-color: #d3c4a5; --highlight-bg: #ebe1c9;
@@ -255,7 +253,7 @@
 
                 <!-- NEW: Last Updated Status Display -->
                 <div class="live-tracker" id="last-updated-container" title="When the site was last pushed to GitHub Pages">
-                    <span id="last-updated-display">Updated: Checking...</span>
+                    <span id="last-updated-display">Last Updated: Checking...</span>
                 </div>
 
                 <!-- NEW: Update Alert Button (Hidden by default) -->
@@ -521,7 +519,7 @@
                             <li class="sub-note">(GIGU Imaging Session not included, image-based)</li>
                         </ul>
                     </div>
-                    <a href="https://ibecerramcg.github.io/GIGUENDO-Week-41-Quiz-3/" class="btn-link">Take Quiz</a>
+                    <a href="#" class="btn-link btn-disabled">Link Pending</a>
                 </div>
             </div>
         </div>
@@ -571,7 +569,7 @@
                         month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'
                     });
                     
-                    document.getElementById('last-updated-display').textContent = `Updated: ${formattedDate}`;
+                    document.getElementById('last-updated-display').textContent = `Last Updated: ${formattedDate}`;
 
                     // Compare current version to version grabbed on page load
                     if (!initialLastModified) {
@@ -616,17 +614,15 @@
                 }
             });
 
-            // Delay fetching so page rendering doesn't block
-            setTimeout(() => {
-                fetchDailyVisitors(); 
+            // Fetch visitor count and check updates immediately with zero delay
+            fetchDailyVisitors(); 
+            checkSiteUpdate();
+            
+            // Continue polling every 60 seconds
+            setInterval(() => {
+                fetchDailyVisitors();
                 checkSiteUpdate();
-                
-                // Poll for new visitors AND new github pushes every 60 seconds
-                setInterval(() => {
-                    fetchDailyVisitors();
-                    checkSiteUpdate();
-                }, 60000);
-            }, 1500);
+            }, 60000);
         }
 
         // --- Collapsible Week Logic ---
