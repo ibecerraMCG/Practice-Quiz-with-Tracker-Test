@@ -27,14 +27,14 @@
             --text-main: #e0e0e0; --text-muted: #888888; --text-accent: #90caf9;
             --border-color: #333333; --highlight-bg: #1a1a1a;
             --button-bg: #90caf9; --button-text: #000000; --button-hover: #42a5f5;
-        }
-
-        [data-theme="legacy-dark"] {
+        }[data-theme="legacy-dark"] {
             --bg-body: #2d343e; --bg-card: #3c424f; --bg-header: #3c424f;
             --text-main: #e8e6e3; --text-muted: #b0c4de; --text-accent: #8ab4f8;
             --border-color: #555; --highlight-bg: #454c5a;
             --button-bg: #8ab4f8; --button-text: #202124; --button-hover: #a3c5f9;
-        }[data-theme="sepia"] {
+        }
+
+        [data-theme="sepia"] {
             --bg-body: #f4ecd8; --bg-card: #fdf6e3; --bg-header: #e4d5b7;
             --text-main: #433422; --text-muted: #7c6f5a; --text-accent: #a05a2c;
             --border-color: #d3c4a5; --highlight-bg: #ebe1c9;
@@ -241,25 +241,15 @@
     <header id="main-header">
         <div class="header-top">
             <h1>GI-GU-ENDO Practice Quiz Directory</h1>
+            
+            <!-- Restored Controls Wrapper (Exactly as it was visually) -->
             <div class="controls-wrapper">
-                
                 <input type="text" id="topic-search" class="search-box" placeholder="Search topics..." onkeyup="filterCards()">
                 
-                <!-- Updated: Visitors Tracker -->
                 <div class="live-tracker" title="Visitors Today (Eastern Time)">
                     <span class="live-dot"></span>
                     <span id="visitor-count-display">Visitors Today: ...</span>
                 </div>
-
-                <!-- NEW: Last Updated Status Display -->
-                <div class="live-tracker" id="last-updated-container" title="When the site was last pushed to GitHub Pages">
-                    <span id="last-updated-display">Last Updated: Checking...</span>
-                </div>
-
-                <!-- NEW: Update Alert Button (Hidden by default) -->
-                <button id="update-refresh-btn" class="update-pulse-btn" onclick="window.location.reload(true)" style="display: none;" title="A new quiz was posted! Click to refresh the page.">
-                    ✨ New Update! (Refresh)
-                </button>
                 
                 <button class="pin-btn pin-active" id="pin-btn" onclick="toggleHeader()" title="Pin/Unpin Header">📌</button>
                 
@@ -296,7 +286,17 @@
             </div>
         </div>
         
-        <div class="section-nav" id="section-nav"></div>
+        <!-- NEW layout: Navigation and Last Updated on the same row -->
+        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
+            <div class="section-nav" id="section-nav"></div>
+            
+            <div id="last-updated-container" style="font-family: monospace; font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: center;">
+                <span id="last-updated-display">Last Updated: Checking...</span>
+                <button id="update-refresh-btn" class="update-pulse-btn" onclick="window.location.reload(true)" style="display: none; height: 28px; font-size: 0.85rem; padding: 0 10px; line-height: 1;" title="A new quiz was posted! Click to refresh the page.">
+                    ✨ New Update! (Refresh)
+                </button>
+            </div>
+        </div>
     </header>
 
     <div class="container" id="directory-root">
@@ -577,7 +577,7 @@
                     } else if (lastModifiedDate.getTime() > initialLastModified) {
                         // GitHub has pushed a new version! Show the refresh button
                         document.getElementById('update-refresh-btn').style.display = 'inline-flex';
-                        document.getElementById('last-updated-container').style.display = 'none'; // Hide the text to make room for button
+                        document.getElementById('last-updated-display').style.display = 'none'; // Hide the text to make room for button
                     }
                 }
             } catch (err) {
@@ -592,6 +592,7 @@
             weekTitles.forEach(title => {
                 const sectionId = title.parentElement.id;
                 const navBtn = document.createElement('button');
+                // Remove the ▼ arrow from the quick nav button text
                 navBtn.textContent = title.textContent.replace('▼', '').trim();
                 navBtn.onclick = () => document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
                 sectionNav.appendChild(navBtn);
@@ -614,7 +615,7 @@
                 }
             });
 
-            // Fetch visitor count and check updates immediately with zero delay
+            // Execute immediately with NO delay
             fetchDailyVisitors(); 
             checkSiteUpdate();
             
